@@ -3,9 +3,7 @@ import shutil
 import tempfile
 import time
 import threading
-import platform
-import datetime
-import psutil
+from datetime import datetime
 from win10toast import ToastNotifier
 
 # Flags to enable/disable optional features
@@ -23,37 +21,34 @@ skipped_count = 0
 LOG_FILE = "cleanup_log.txt"
 
 def log(message):
-    timestamp = datetime.datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
+    timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
     print(f"{timestamp} {message}")
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"{timestamp} {message}\n")
 
-def notify(title, msg):
-    try:
-        toaster.show_toast(title, msg, duration=5)
-    except:
-        print(f"[🔔] {title} - {msg}")
-
-def delete_temp_files():
+def delete_temp_files(temp_path, dry_run=False):
     global deleted_count, skipped_count
-    temp_dir = tempfile.gettempdir()
-    log(f"🧹 Clearing temp folder: {temp_dir}")
-    for root, dirs, files in os.walk(temp_dir):
+    deleted = 0
+    locked = 0
+
+    for root, dirs, files in os.walk(temp_path):
         for file in files:
             file_path = os.path.join(root, file)
             try:
-                os.remove(file_path)
-                deleted_count += 1
-                log(f"[🗑️] Deleted temp file: {file_path}")
-            except Exception:
-                skipped_count += 1
-                log(f"⚠️ Locked: {file_path} - in use by another process")
-        for d in dirs:
-            try:
-                shutil.rmtree(os.path.join(root, d), ignore_errors=True)
-                log(f"[🗑️] Deleted temp directory: {os.path.join(root, d)}")
+                if dry_run:
+                    print(f"🔍 DRY RUN: Would delete {file_path}")
+                else:
+                    os.remove(file_path)
+                    deleted += 1
+                    log(f"[🗑️] Deleted temp file: {file_path}")
+            except PermissionError:
+                print(f"⚠️ Locked: {file_path} - in use by another process")
+                locked += 1
             except Exception as e:
-                log(f"⚠️ Could not delete dir: {d} - {e}")
+                print(f"❌ Error deleting {file_path}: {e}")
+                locked += 1
+
+    return deleted, locked
 
 def clear_browser_cache():
     cache_paths = [
@@ -71,50 +66,34 @@ def clear_browser_cache():
                 except Exception as e:
                     log(f"[⚠️] Could not delete: {file} - {e}")
 
-def delete_log_files(folders):
-    for folder in folders:
-        folder = os.path.expandvars(folder)
-        if os.path.exists(folder):
-            for file in os.listdir(folder):
-                if file.endswith(".log"):
-                    try:
-                        file_path = os.path.join(folder, file)
-                        os.remove(file_path)
-                        log(f"[🗑️] Deleted log file: {file_path}")
-                    except Exception as e:
-                        log(f"[⚠️] Could not delete log: {file_path} - {e}")
+def show_notification(deleted, locked):
+    toaster.show_toast("ZeroLag Cleaner",
+                       f"Cleanup done! 🧹 Deleted: {deleted}, Locked: {locked}",
+                       duration=6,
+                       icon_path=None,
+                       threaded=True)
 
-def run_cleanup_all():
-    delete_temp_files()
+def run_cleanup_all(dry_run=False):
+    global deleted_count, skipped_count
+    temp_dir = tempfile.gettempdir()
+    log(f"🧹 Clearing temp folder: {temp_dir}")
+    deleted, locked = delete_temp_files(temp_dir, dry_run=dry_run)
+    deleted_count += deleted
+    skipped_count += locked
+
     if ENABLE_CACHE_CLEAN:
         clear_browser_cache()
-    if ENABLE_LOG_CLEAN:
-        log_folders = [r"%TEMP%", r"%USERPROFILE%\AppData\Local\Microsoft\Windows\WebCache"]
-        delete_log_files(log_folders)
+
     log(f"✅ Temp cleanup completed.")
     log(f"🧼 System cleanup completed.")
     log(f"📊 Summary: Deleted {deleted_count} | Skipped (locked): {skipped_count}")
-    notify("ZeroLag Cleaner", f"Cleanup done! Deleted: {deleted_count}, Skipped: {skipped_count}")
+    show_notification(deleted_count, skipped_count)
 
-def background_cleaner(interval=1800):
+def background_cleaner(interval=1800, dry_run=False):
     def job():
         while True:
             log("🌀 Running background cleanup...")
-
-            # Track changes per session
-            global deleted_count, skipped_count
-            before_deleted = deleted_count
-            before_skipped = skipped_count
-
-            run_cleanup_all()
-
-            # Summary of this run
-            newly_deleted = deleted_count - before_deleted
-            newly_skipped = skipped_count - before_skipped
-
-            log(f"✅ This cycle - Deleted: {newly_deleted}, Skipped: {newly_skipped}")
-            log("-" * 60)
-
+            run_cleanup_all(dry_run=dry_run)
             time.sleep(interval)
 
     t = threading.Thread(target=job, daemon=True)
