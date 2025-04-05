@@ -1,0 +1,42 @@
+[2025-04-05 15:05:23] 🌀 Running background cleanup...
+[2025-04-05 15:05:23] 🧹 Clearing temp folder: C:\Users\PALAVI\AppData\Local\Temp
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\057aa455-514b-4cbf-bfea-f9774ccde517.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\2be25ae0-fa59-47b9-a681-26d460ac3343.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\31ae6e5b-c68a-4d3f-81ad-cd7bae399f96.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\39b5b015-9d9a-4b63-91a7-c110a45efba5.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\3ea0e69b-36e6-4bbe-ab78-de21776b0191.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\3ee0b7e2-52b1-490c-a780-9ff252e4402a.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\53bc4a40-0a9c-4c21-8e04-c2d2a9708e75.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\5a7edf55-729e-486f-ba72-b85c20dd6822.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\78b5aad4-2c74-4a21-8572-f18d7fe6dc1a.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\887e88b5-a03a-4a82-8ed4-3c5195f6d3a8.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\8e1473d8-0a61-41fd-bb0b-e278669c2bf1.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\93dd9d28-d198-4564-9eed-c46d9852e72e.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\98dc52c3-4985-4718-8ee9-e0d84b4b5b81.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\a8b70f42-8fdc-41ff-bc18-28f4c1ab5ec6.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\a9b0bd1e-7571-43d1-9660-d922ab4e11e0.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\b205283b-4deb-4619-9d18-ad77f4cafa28.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\b2b9cd9f-58bb-4d3b-a66e-27d84a606f17.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\b411a808-7592-4e50-9725-45e7395f3cf1.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\c097079b-eda8-4f97-9bed-932582f929b9.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\cf78e75f-4762-4282-8995-4998e2bd80da.tmp - in use by another process
+[2025-04-05 15:05:23] [🗑️] Deleted temp file: C:\Users\PALAVI\AppData\Local\Temp\NotifyIconGeneratedAumid_2934612187256443568.png
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\Setup Log 2025-04-05 #001.txt - in use by another process
+[2025-04-05 15:05:23] [🗑️] Deleted temp directory: C:\Users\PALAVI\AppData\Local\Temp\Diagnostics
+[2025-04-05 15:05:23] [🗑️] Deleted temp directory: C:\Users\PALAVI\AppData\Local\Temp\is-08QND.tmp
+[2025-04-05 15:05:23] [🗑️] Deleted temp directory: C:\Users\PALAVI\AppData\Local\Temp\vscode-stable-user-x64
+[2025-04-05 15:05:23] [🗑️] Deleted temp directory: C:\Users\PALAVI\AppData\Local\Temp\Diagnostics\POWERPNT
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\Diagnostics\POWERPNT\Primary1743830648264068500_E044ABBA-ADE8-4085-B477-F1856376A66F.log - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\Diagnostics\POWERPNT\Primary1743830648265272200_E044ABBA-ADE8-4085-B477-F1856376A66F.log - in use by another process
+[2025-04-05 15:05:23] [🗑️] Deleted temp directory: C:\Users\PALAVI\AppData\Local\Temp\Diagnostics\POWERPNT\Additional
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\Diagnostics\POWERPNT\Additional\Additional1743830648270854600_E044ABBA-ADE8-4085-B477-F1856376A66F.log - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\Diagnostics\POWERPNT\Additional\Additional1743830648272435600_E044ABBA-ADE8-4085-B477-F1856376A66F.log - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\is-08QND.tmp\CodeSetup-stable-4437686ffebaf200fa4a6e6e67f735f3edf24ada.tmp - in use by another process
+[2025-04-05 15:05:23] ⚠️ Locked: C:\Users\PALAVI\AppData\Local\Temp\vscode-stable-user-x64\CodeSetup-stable-4437686ffebaf200fa4a6e6e67f735f3edf24ada.exe - in use by another process
+[2025-04-05 15:05:23] [⚠️] Could not delete log: C:\Users\PALAVI\AppData\Local\Microsoft\Windows\WebCache\V01.log - [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PALAVI\\AppData\\Local\\Microsoft\\Windows\\WebCache\\V01.log'
+[2025-04-05 15:05:23] [⚠️] Could not delete log: C:\Users\PALAVI\AppData\Local\Microsoft\Windows\WebCache\V01tmp.log - [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\PALAVI\\AppData\\Local\\Microsoft\\Windows\\WebCache\\V01tmp.log'
+[2025-04-05 15:05:23] ✅ Temp cleanup completed.
+[2025-04-05 15:05:23] 🧼 System cleanup completed.
+[2025-04-05 15:05:23] 📊 Summary: Deleted 1 | Skipped (locked): 27
+[2025-04-05 15:05:29] ✅ This cycle - Deleted: 1, Skipped: 27
+[2025-04-05 15:05:29] ------------------------------------------------------------

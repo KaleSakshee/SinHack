@@ -19,9 +19,14 @@ toaster = ToastNotifier()
 deleted_count = 0
 skipped_count = 0
 
+# Log file for tracking deletions
+LOG_FILE = "cleanup_log.txt"
+
 def log(message):
     timestamp = datetime.datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
     print(f"{timestamp} {message}")
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(f"{timestamp} {message}\n")
 
 def notify(title, msg):
     try:
@@ -39,12 +44,14 @@ def delete_temp_files():
             try:
                 os.remove(file_path)
                 deleted_count += 1
+                log(f"[🗑️] Deleted temp file: {file_path}")
             except Exception:
                 skipped_count += 1
                 log(f"⚠️ Locked: {file_path} - in use by another process")
         for d in dirs:
             try:
                 shutil.rmtree(os.path.join(root, d), ignore_errors=True)
+                log(f"[🗑️] Deleted temp directory: {os.path.join(root, d)}")
             except Exception as e:
                 log(f"⚠️ Could not delete dir: {d} - {e}")
 
@@ -71,10 +78,11 @@ def delete_log_files(folders):
             for file in os.listdir(folder):
                 if file.endswith(".log"):
                     try:
-                        os.remove(os.path.join(folder, file))
-                        log(f"[🗑️] Deleted log file: {file}")
+                        file_path = os.path.join(folder, file)
+                        os.remove(file_path)
+                        log(f"[🗑️] Deleted log file: {file_path}")
                     except Exception as e:
-                        log(f"[⚠️] Could not delete log: {file} - {e}")
+                        log(f"[⚠️] Could not delete log: {file_path} - {e}")
 
 def run_cleanup_all():
     delete_temp_files()
@@ -92,8 +100,23 @@ def background_cleaner(interval=1800):
     def job():
         while True:
             log("🌀 Running background cleanup...")
+
+            # Track changes per session
+            global deleted_count, skipped_count
+            before_deleted = deleted_count
+            before_skipped = skipped_count
+
             run_cleanup_all()
+
+            # Summary of this run
+            newly_deleted = deleted_count - before_deleted
+            newly_skipped = skipped_count - before_skipped
+
+            log(f"✅ This cycle - Deleted: {newly_deleted}, Skipped: {newly_skipped}")
+            log("-" * 60)
+
             time.sleep(interval)
+
     t = threading.Thread(target=job, daemon=True)
     t.start()
 
