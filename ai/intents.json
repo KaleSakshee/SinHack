@@ -1,0 +1,658 @@
+{
+     "intents": [
+       {
+         "tag": "greeting",
+         "patterns": ["hello", "hi", "hey", "what's up"],
+         "responses": ["Hey there!", "Hello!", "Hi! How can I assist you with your Windows system today?"]
+       },
+       {
+         "tag": "goodbye",
+         "patterns": ["bye", "see you", "goodbye"],
+         "responses": ["Goodbye!", "See you soon!", "Bye! Take care."]
+       },
+       {
+         "tag": "thanks",
+         "patterns": ["thanks", "thank you", "appreciate it"],
+         "responses": ["You're welcome!", "No problem!", "Anytime!"]
+       },
+       {
+          "tag": "night_light",
+          "patterns": ["how to turn on night light", "enable night mode", "blue light filter"],
+          "responses": ["Go to Settings > System > Display, and toggle the 'Night light' option to reduce blue light."]
+        },
+       {
+         "tag": "os_help",
+         "patterns": ["how to check running processes", "get task manager", "process list"],
+         "responses": ["You can press Ctrl + Shift + Esc to open Task Manager and view running processes."]
+       },
+       {
+         "tag": "disk_space",
+         "patterns": ["how to check disk space", "disk usage", "free space on drive"],
+         "responses": ["Open File Explorer, right-click on the drive, select 'Properties', and view the available free space."]
+       },
+       {
+         "tag": "ip_address",
+         "patterns": ["how to find my IP address", "what is my IP", "check IP address"],
+         "responses": ["Press Win + R, type 'cmd', press Enter, then type 'ipconfig' to view your IP address."]
+       },
+       {
+         "tag": "wifi_password",
+         "patterns": ["how to find Wi-Fi password", "forgot Wi-Fi password", "retrieve wireless password"],
+         "responses": ["In Command Prompt, type 'netsh wlan show profile name=\"YourNetworkName\" key=clear' to view the Wi-Fi password."]
+       },
+       {
+         "tag": "system_info",
+         "patterns": ["how to check system information", "system specs", "computer details"],
+         "responses": ["Press Win + Pause/Break to open System Properties and view basic system information."]
+       },
+       {
+         "tag": "safe_mode",
+         "patterns": ["how to start in safe mode", "boot into safe mode", "safe mode Windows"],
+         "responses": ["Restart your computer and press F8 before Windows loads to access Advanced Boot Options and select Safe Mode."]
+       },
+       {
+         "tag": "update_windows",
+         "patterns": ["how to update Windows", "check for updates", "Windows update"],
+         "responses": ["Go to Settings > Update & Security > Windows Update, then click 'Check for updates'."]
+       },
+       {
+         "tag": "firewall_settings",
+         "patterns": ["how to check firewall settings", "configure firewall", "Windows firewall"],
+         "responses": ["Open Control Panel, go to 'System and Security', then click on 'Windows Defender Firewall' to view and configure settings."]
+       },
+       {
+         "tag": "restore_point",
+         "patterns": ["how to create a restore point", "system restore point", "backup system state"],
+         "responses": ["Search for 'Create a restore point' in the Start menu, then click 'Create' under the System Protection tab."]
+       },
+       {
+         "tag": "device_manager",
+         "patterns": ["how to open device manager", "manage hardware devices", "device manager access"],
+         "responses": ["Press Win + X and select 'Device Manager' to view and manage hardware devices."]
+       },
+       {
+         "tag": "command_prompt",
+         "patterns": ["how to open command prompt", "access cmd", "open cmd"],
+         "responses": ["Press Win + R, type 'cmd', and press Enter to open the Command Prompt."]
+       },
+       {
+         "tag": "blue_screen",
+         "patterns": ["what to do when I get a blue screen", "blue screen error", "BSOD fix"],
+         "responses": ["A Blue Screen of Death (BSOD) can be caused by hardware or driver issues. Note the error code displayed, restart your computer, and search for the error code online for specific troubleshooting steps."]
+       },
+       {
+         "tag": "slow_computer",
+         "patterns": ["why is my computer slow", "slow performance", "computer lagging"],
+         "responses": ["Slow performance can be due to various reasons such as too many startup programs, malware, or insufficient hardware resources. Consider running a malware scan, disabling unnecessary startup programs, and upgrading hardware if needed."]
+       },
+       {
+         "tag": "no_sound",
+         "patterns": ["why is there no sound", "audio not working", "sound issues"],
+         "responses": ["Check if the speakers are properly connected and the volume is up. Also, ensure that the correct playback device is selected and update audio drivers if necessary."]
+       },
+       {
+         "tag": "printer_not_working",
+         "patterns": ["why is my printer not working", "printer issues", "can't print"],
+         "responses": ["Ensure the printer is properly connected, has paper and ink, and that the correct printer is set as default. Also, try restarting the printer and your computer."]
+       },
+       {
+         "tag": "internet_slow",
+         "patterns": ["why is my internet slow", "slow internet", "internet speed issues"],
+         "responses": ["Slow internet can be due to network congestion, weak Wi-Fi signals, or issues with your ISP. Try restarting your router, moving closer to the router, or contacting your ISP."]
+       },
+       {
+         "tag": "windows_activation",
+         "patterns": ["how to activate Windows", "Windows activation", "activate Windows"],
+         "responses": ["Go to Settings > Update & Security > Activation, and follow the prompts to activate Windows. Ensure you have a valid product key."]
+       },
+       {
+         "tag": "screen_resolution",
+         "patterns": ["how to change screen resolution", "adjust display settings", "screen resolution settings"],
+         "responses": ["Right-click on the desktop, select 'Display settings', and adjust the resolution under the 'Display resolution' dropdown."]
+       },
+       {
+         "tag": "keyboard_shortcuts",
+         "patterns": ["what are some useful keyboard shortcuts", "Windows shortcuts", "keyboard shortcuts"],
+         "responses": [
+           "Here are some useful Windows keyboard shortcuts:\n- Win + D: Show desktop\n- Alt + Tab: Switch between open applications\n- Ctrl + C: Copy\n- Ctrl + V: Paste\n- Win + L: Lock your PC"
+         ]
+       },
+       {
+         "tag": "disk_cleanup",
+         "patterns": ["how to perform disk cleanup", "free up disk space", "remove unnecessary files"],
+         "responses": ["Search for 'Disk Cleanup' in the Start menu, select the drive you want to clean, and follow the prompts to remove unnecessary files."]
+       },
+       {
+         "tag": "password_reset",
+         "patterns": ["how to reset my password", "forgot Windows password", "reset login password"],
+         "responses": ["On the login screen, click on 'Forgot password' if you're using a Microsoft account. For local accounts, you can reset using a password reset disk or boot into Safe Mode with Command Prompt."]
+       },
+       {
+          "tag": "windows_update_fail",
+          "patterns": ["Windows update failed", "Can't update Windows", "Error updating Windows"],
+          "responses": [
+            "Try running the Windows Update Troubleshooter by going to Settings > Update & Security > Troubleshoot > Additional troubleshooters > Windows Update.",
+            "Ensure you have a stable internet connection and sufficient disk space before updating."
+          ],
+          "links": ["https://support.microsoft.com/en-us/windows/troubleshoot-problems-updating-windows-188c2b0f-10a7-d72f-65b8-32d177eb136c"]
+        },
+        {
+          "tag": "slow_startup",
+          "patterns": ["Windows takes forever to boot", "Slow startup", "Computer slow to start"],
+          "responses": [
+            "Disable unnecessary startup programs by pressing Ctrl + Shift + Esc to open Task Manager, then navigate to the 'Startup' tab and disable unwanted programs.",
+            "Consider enabling Fast Startup by going to Control Panel > Power Options > Choose what the power buttons do > Change settings that are currently unavailable, then check 'Turn on fast startup'."
+          ],
+          "links": ["https://www.pctips.com/common-windows-problems/"]
+        },
+        {
+          "tag": "no_internet",
+          "patterns": ["No internet connection", "Can't connect to Wi-Fi", "Internet not working"],
+          "responses": [
+            "Restart your router and modem, then reconnect to the network.",
+            "Run the Network Troubleshooter by going to Settings > Network & Internet > Status > Network troubleshooter."
+          ],
+          "links": ["https://www.reddit.com/r/pcmasterrace/comments/16zjf3f/dealing_with_common_pc_issues_simple_fixes_and/"]
+        },
+        {
+          "tag": "printer_not_detected",
+          "patterns": ["Printer not detected", "Can't find printer", "Printer won't connect"],
+          "responses": [
+            "Ensure the printer is powered on and connected to the same network as your computer.",
+            "Add the printer manually by going to Settings > Devices > Printers & scanners > Add a printer or scanner."
+          ],
+          "links": ["https://support.microsoft.com/en-us/windows/fix-printer-problems-in-windows-10-5a928f29-5ef2-4cfb-825d-2826c6a38c73"]
+        },
+        {
+          "tag": "audio_not_working",
+          "patterns": ["No sound from speakers", "Audio not working", "Can't hear anything"],
+          "responses": [
+            "Check if the audio is muted or the volume is turned down.",
+            "Update or reinstall audio drivers by going to Device Manager, expanding 'Sound, video and game controllers', right-clicking your audio device, and selecting 'Update driver'."
+          ],
+          "links": ["https://support.microsoft.com/en-us/windows/fix-sound-problems-in-windows-10-73025246-b61c-40fb-671a-2535c7cd56c8"]
+        },
+        {
+          "tag": "usb_device_not_recognized",
+          "patterns": ["USB device not recognized", "Can't access USB drive", "USB not working"],
+          "responses": [
+            "Try connecting the USB device to a different port.",
+            "Update USB drivers by going to Device Manager, expanding 'Universal Serial Bus controllers', right-clicking the USB driver, and selecting 'Update driver'."
+          ],
+          "links": ["https://support.microsoft.com/en-us/windows/usb-device-not-recognized-error-when-you-try-to-access-a-usb-external-hard-drive-8c4b9c8a-8d6e-1a4d-4c5b-2a2f7f1e0f3e"]
+        },
+        {
+          "tag": "bsod",
+          "patterns": ["Blue screen error", "BSOD", "Your PC ran into a problem"],
+          "responses": [
+            "Note the error code displayed on the blue screen for troubleshooting.",
+            "Update all drivers and ensure Windows is up to date."
+          ],
+          "links": ["https://www.computertechnicians.com.au/14-most-common-windows-10-problems-and-their-solutions/"]
+        },
+        {
+          "tag": "windows_activation_error",
+          "patterns": ["Windows activation failed", "Can't activate Windows", "Activation error"],
+          "responses": [
+            "Ensure you're using a valid product key.",
+            "Run the Activation Troubleshooter by going to Settings > Update & Security > Activation > Troubleshoot."
+          ],
+          "links": ["https://support.microsoft.com/en-us/windows/activation-in-windows-10-92c27b8a-5db6-3b03-6b61-7b7c2b1e3fc4"]
+        },
+        {
+          "tag": "file_explorer_not_responding",
+          "patterns": ["File Explorer not responding", "Can't open File Explorer", "Explorer.exe crashes"],
+          "responses": [
+            "Restart File Explorer by pressing Ctrl + Shift + Esc to open Task Manager, finding 'Windows Explorer' under the 'Processes' tab, right-clicking it, and selecting 'Restart'.",
+            "Clear File Explorer history by going to File Explorer Options and clicking 'Clear' under the 'General' tab."
+          ],
+          "links": ["https://www.pctips.com/common-windows-problems/"]
+        },
+        {
+          "tag": "windows_search_not_working",
+          "patterns": ["Search bar not working", "Can't search in Windows", "Windows search broken"],
+          "responses": [
+            "Restart the 'Windows Search' service by pressing Win + R, typing 'services.msc', finding 'Windows Search', right-clicking it, and selecting 'Restart'.",
+            "Run the Search and Indexing Troubleshooter by going to Settings > Update & Security > Troubleshoot > Additional troubleshooters > Search and Indexing."
+          ],
+          "links": ["https://support.microsoft.com/en-us/windows/fix-problems-in-windows-search-0c573de0-1b9b-2b00-4e01-ec1c4c6f69f0"]
+        },
+        {
+          "tag": "windows_store_not_working",
+          "patterns": ["Microsoft Store won't open", "Can't download apps", "Windows Store not working"],
+          "responses": [
+            "Reset the Microsoft Store cache by pressing Win + R, typing 'wsreset.exe', and pressing Enter.",
+            "Re-register the Microsoft Store by opening PowerShell as an administrator and running the command 'Get-AppXPackage *Microsoft.WindowsStore* | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register '$($_.InstallLocation)\\AppXManifest.xml'}'."
+          ],
+          "links": ["https://support.microsoft.com/en-us/windows/microsoft-store-doesn-t-launch-8ce6db94-77b1-9f42-6c3f-1e6e1254de9f"]
+        },
+        {
+          "tag": "error_0x80004005",
+          "patterns": ["The error message '0x80004005' keeps popping up whenever I try to install a new application."],
+          "responses": ["Error 0x80004005 is a generic error indicating that the system cannot access a file. Ensure you have the necessary permissions and that the file isn't corrupted."]
+        },
+        {
+          "tag": "wifi_password_unknown",
+          "patterns": ["I'm trying to connect to my company's Wi-Fi but it's asking for a password that I've never seen before."],
+          "responses": ["Please contact your company's IT department to obtain the correct Wi-Fi password."]
+        },
+        {
+          "tag": "bsod_0xc0000005",
+          "patterns": ["I'm getting a blue screen of death every time I try to install a new driver, but it says it's successful. The error message says '0xc0000005'."],
+          "responses": ["Error 0xc0000005 indicates an access violation. Ensure the driver is compatible with your system and consider rolling back to a previous version."]
+        },
+        {
+          "tag": "os_not_found",
+          "patterns": ["My laptop won't turn on after I upgraded to the latest version of Windows. I saw an error message that said 'OS not found'."],
+          "responses": ["The 'OS not found' error suggests that the system cannot locate the operating system. Verify your boot order in BIOS and consider repairing the OS installation."]
+        },
+        {
+          "tag": "wifi_drops_streaming",
+          "patterns": ["The Wi-Fi connection drops constantly when I try to stream videos from my phone to the TV, but it works fine when I'm just browsing the internet."],
+          "responses": ["Streaming requires more bandwidth. Ensure your router's firmware is updated and consider reducing interference from other devices."]
+        },
+        {
+          "tag": "laptop_wifi_disconnects",
+          "patterns": ["I'm experiencing issues with my laptop's Wi-Fi. Sometimes it disconnects from the internet and I have to restart it to reconnect."],
+          "responses": ["Update your Wi-Fi drivers and adjust your power management settings to prevent the adapter from turning off."]
+        },
+        {
+          "tag": "security_patch_restart",
+          "patterns": ["I'm having trouble with my laptop and it says it needs a restart to install the latest security patches."],
+          "responses": ["Save your work and restart your laptop to complete the installation of security patches."]
+        },
+        {
+          "tag": "home_wifi_drops",
+          "patterns": ["I'm trying to set up my home Wi-Fi network, but it keeps dropping the connection every 10 minutes."],
+          "responses": ["Check for firmware updates for your router and ensure it's placed in a central location free from obstructions."]
+        },
+        {
+          "tag": "wifi_living_room_issue",
+          "patterns": ["My laptop won't connect to Wi-Fi when I'm in the living room."],
+          "responses": ["The signal may be weak in the living room. Consider using a Wi-Fi extender to boost the signal strength."]
+        },
+        {
+          "tag": "bsod_0x0000007B",
+          "patterns": ["The computer won't boot up after I installed the new operating system, and it's showing a blue screen with an error message saying 'STOP: 0x0000007B'."],
+          "responses": ["Error 0x0000007B indicates an inaccessible boot device. Ensure your storage drivers are correctly installed and configured."]
+        },
+        {
+          "tag": "bsod_driver_power_state_failure",
+          "patterns": ["My Windows 10 laptop is constantly freezing and showing a blue screen with an error message saying 'DRIVER_POWER_STATE_FAILURE'."],
+          "responses": ["This error often relates to driver issues. Update all drivers, especially those related to power management."]
+        },
+        {
+          "tag": "word_document_freezing",
+          "patterns": ["I'm trying to fix an issue where my Microsoft Word document is constantly freezing."],
+          "responses": ["Ensure Microsoft Word is updated to the latest version and consider repairing the Office installation."]
+        },
+        {
+          "tag": "bsod_0x0000001E",
+          "patterns": ["I'm experiencing a strange issue where my laptop's display is showing a blue screen with an error code 0x0000001E."],
+          "responses": ["Error 0x0000001E indicates a KMODE_EXCEPTION_NOT_HANDLED. Check for faulty drivers or hardware issues."]
+        },
+        {
+          "tag": "windows_update_error",
+          "patterns": ["I'm getting an error message on my laptop screen that says 'Windows Update encountered an error'."],
+          "responses": ["Run the Windows Update Troubleshooter and ensure your system date and time are correct."]
+        },
+        {
+          "tag": "wifi_connected_no_internet",
+          "patterns": ["My laptop won't connect to the Wi-Fi network. It says 'connected' but I'm not getting any internet."],
+          "responses": ["Try forgetting the network and reconnecting. If the issue persists, reset your network settings."]
+        },
+        {
+          "tag": "laptop_no_power",
+          "patterns": ["The laptop won't turn on and the screen is completely black."],
+          "responses": ["Ensure the power adapter is functioning and the battery is properly seated. If the issue persists, seek professional assistance."]
+        },
+        {
+          "tag": "black_screen_no_power",
+          "patterns": ["My laptop screen has gone black and I'm unable to turn it on."],
+          "responses": ["Check if the laptop is charging and try a hard reset by holding the power button for 30 seconds."]
+        },
+        {
+          "tag": "windows_10_installation_failure",
+          "patterns": ["I'm trying to install Windows 10 on my new laptop but the setup process keeps failing due to a required update not being available."],
+          "responses": ["Ensure your installation media is up to date and consider using the Media Creation Tool for installation."]
+        },
+        {
+          "tag": "excel_crashes_after_update",
+          "patterns": ["When I try to open Microsoft Excel, it crashes immediately after I click on the icon."],
+          "responses": ["Try opening Excel in safe mode by holding the Ctrl key while launching the application."]
+        },
+        {
+          "tag": "graphics_driver_install_freeze",
+          "patterns": ["I'm trying to install a new graphics driver but the process keeps freezing at 99% completion."],
+          "responses": ["Ensure all previous graphics drivers are uninstalled before installing the new one."]
+        },
+        {
+          "tag": "keyboard_not_functioning_after_drop",
+          "patterns": ["My laptop's keyboard is not functioning properly after I dropped it on the floor."],
+          "responses": ["Physical damage may have occurred. Consider having the keyboard inspected or replaced."]
+        },
+        {
+          "tag": "printer_spooler_issue",
+          "patterns": [
+            "printer not responding",
+            "print jobs stuck",
+            "how to restart printer spooler",
+            "fix printer spooler issue"
+          ],
+          "responses": [
+            "Try these steps:\n1. Run the Printer Troubleshooter from Settings > Update & Security > Troubleshoot.\n2. Restart the Print Spooler from services.msc.\n3. Clear the print queue from C:\\Windows\\System32\\spool\\PRINTERS and restart the service."
+          ]
+        },
+        {
+          "tag": "windows_update_failure",
+          "patterns": [
+            "windows update not working",
+            "update installation failed",
+            "how to fix windows update"
+          ],
+          "responses": [
+            "Try:\n1. Run the Windows Update Troubleshooter.\n2. Ensure 20GB+ free disk space.\n3. Manually reset Windows Update components via Command Prompt."
+          ]
+        },
+        {
+          "tag": "low_disk_space",
+          "patterns": [
+            "running out of storage",
+            "low disk space",
+            "how to free up space"
+          ],
+          "responses": [
+            "Solutions:\n1. Analyze disk usage with WizTree.\n2. Use Disk Cleanup.\n3. Uninstall unused apps from Settings > Apps."
+          ]
+        },
+        {
+          "tag": "keyboard_shortcuts",
+          "patterns": [
+            "windows keyboard shortcuts",
+            "helpful shortcuts",
+            "quick keys in windows"
+          ],
+          "responses": [
+            "Useful shortcuts:\n- Alt + Tab: Switch apps\n- Win + D: Show desktop\n- Win + L: Lock PC\n- Win + I: Settings\n- Win + S: Search"
+          ]
+        },
+        {
+          "tag": "customize_start_menu",
+          "patterns": [
+            "change start menu",
+            "personalize start menu",
+            "customize windows start"
+          ],
+          "responses": [
+            "Customize your Start Menu:\n1. Right-click tiles to Pin/Unpin.\n2. Resize tiles.\n3. Change color from Settings > Personalization > Colors."
+          ]
+        },
+        {
+          "tag": "virtual_desktops",
+          "patterns": [
+            "use multiple desktops",
+            "how to switch desktops",
+            "manage virtual desktops"
+          ],
+          "responses": [
+            "To manage desktops:\n1. Win + Tab → New Desktop\n2. Ctrl + Win + ←/→ to switch\n3. Drag apps in Task View to move them"
+          ]
+        },
+        {
+          "tag": "snipping_tool",
+          "patterns": [
+            "how to take screenshot",
+            "use snipping tool",
+            "snip screen in windows"
+          ],
+          "responses": [
+            "Steps:\n1. Open Snipping Tool\n2. Click New and select area\n3. Save or copy the snip"
+          ]
+        },
+        {
+          "tag": "startup_programs",
+          "patterns": [
+            "disable startup apps",
+            "slow boot time",
+            "manage startup programs"
+          ],
+          "responses": [
+            "Steps:\n1. Ctrl + Shift + Esc → Task Manager\n2. Go to Startup tab\n3. Right-click and disable unwanted programs"
+          ]
+        },
+        {
+          "tag": "display_settings",
+          "patterns": [
+            "change screen resolution",
+            "adjust display settings",
+            "fix blurry screen"
+          ],
+          "responses": [
+            "Steps:\n1. Right-click Desktop > Display Settings\n2. Adjust resolution and scaling\n3. Enable Night Light if needed"
+          ]
+        },
+        {
+          "tag": "dark_mode",
+          "patterns": [
+            "enable dark mode",
+            "dark theme windows",
+            "reduce eye strain"
+          ],
+          "responses": [
+            "To enable Dark Mode:\n1. Win + I → Settings\n2. Go to Personalization > Colors\n3. Choose 'Dark' under color options"
+          ]
+        },
+        {
+          "tag": "focus_assist",
+          "patterns": [
+            "enable focus assist",
+            "block notifications",
+            "stop distractions"
+          ],
+          "responses": [
+            "Steps to use Focus Assist:\n1. Win + I → System > Focus Assist\n2. Set to Priority or Alarms only"
+          ]
+        },
+        {
+          "tag": "computer_slow",
+          "patterns": [
+              "my pc is slow",
+              "why is my computer lagging",
+              "slow performance",
+              "speed up my windows",
+              "windows is running slow"
+          ],
+          "responses": [
+              "Try disabling unnecessary startup apps from Task Manager.",
+              "Run Disk Cleanup and check for malware using Windows Defender.",
+              "Consider upgrading your RAM or switching to SSD for better speed."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "internet_not_working",
+          "patterns": [
+              "internet not working",
+              "can't connect to wifi",
+              "no internet",
+              "network issue",
+              "wifi disconnected"
+          ],
+          "responses": [
+              "Restart your router and PC.",
+              "Use the Network Troubleshooter in Settings \u2192 Network & Internet.",
+              "Try `ipconfig /release` and `ipconfig /renew` in Command Prompt."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "printer_not_responding",
+          "patterns": [
+              "printer not responding",
+              "can't print",
+              "printer error",
+              "windows can't find printer"
+          ],
+          "responses": [
+              "Ensure your printer is connected and powered on.",
+              "Restart the Print Spooler service using services.msc.",
+              "Reinstall the printer driver from the manufacturer's site."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "no_sound",
+          "patterns": [
+              "no sound",
+              "can't hear anything",
+              "audio not working",
+              "sound problem"
+          ],
+          "responses": [
+              "Check volume settings and mute status.",
+              "Update audio drivers via Device Manager.",
+              "Use the built-in sound troubleshooter in Settings \u2192 System \u2192 Sound."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "windows_update_issues",
+          "patterns": [
+              "windows update not working",
+              "can't update windows",
+              "update error"
+          ],
+          "responses": [
+              "Use the Windows Update Troubleshooter in Settings.",
+              "Delete contents of SoftwareDistribution folder to reset update cache.",
+              "Run `sfc /scannow` and `DISM` commands to fix corrupted files."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "bsod",
+          "patterns": [
+              "blue screen",
+              "bsod",
+              "irql_not_less_or_equal",
+              "stop code"
+          ],
+          "responses": [
+              "Note the error code and check for hardware/software changes.",
+              "Update your drivers and scan using `sfc /scannow` and `chkdsk /f`.",
+              "Boot into Safe Mode if the system won\u2019t start normally."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "forgot_password",
+          "patterns": [
+              "forgot my password",
+              "can't login",
+              "reset windows password"
+          ],
+          "responses": [
+              "Click 'Reset password' on the login screen if you're using a Microsoft account.",
+              "Use another admin account to reset your password via Control Panel.",
+              "Use recovery tools with a Windows installation disk for local accounts."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "wifi_disconnects",
+          "patterns": [
+              "wifi keeps disconnecting",
+              "unstable wifi",
+              "wifi problem"
+          ],
+          "responses": [
+              "Update your network drivers.",
+              "Disable power saving for the Wi-Fi adapter in Power Options.",
+              "Forget and reconnect to the Wi-Fi network."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "disk_cleanup",
+          "patterns": [
+              "low storage",
+              "disk full",
+              "free up space",
+              "clean disk"
+          ],
+          "responses": [
+              "Run Disk Cleanup or Storage Sense from Settings.",
+              "Delete temporary files and uninstall unused apps.",
+              "Optionally, use CCleaner but with caution."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "missing_files",
+          "patterns": [
+              "desktop files missing",
+              "my files disappeared",
+              "where are my files"
+          ],
+          "responses": [
+              "Use `Win + D` or check other virtual desktops.",
+              "Look in the Recycle Bin and OneDrive folders.",
+              "Check the Desktop folder in `C:\\Users\\<yourname>\\Desktop`."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "windows11_upgrade_issue",
+          "patterns": [
+              "can\u2019t upgrade to windows 11",
+              "windows 11 not supported",
+              "windows 11 compatibility"
+          ],
+          "responses": [
+              "Check TPM 2.0 and Secure Boot are enabled in BIOS.",
+              "Use the PC Health Check tool to verify compatibility.",
+              "Ensure Windows 10 is up to date before upgrading."
+          ],
+          "context": [
+              ""
+          ]
+      },
+      {
+          "tag": "printer_not_detected_win11",
+          "patterns": [
+              "printer not working in windows 11",
+              "can't detect printer",
+              "add printer"
+          ],
+          "responses": [
+              "Run the Printer Troubleshooter from Settings.",
+              "Update printer drivers from the manufacturer\u2019s site.",
+              "Add the printer manually from Settings \u2192 Bluetooth & devices \u2192 Printers."
+          ],
+          "context": [
+              ""
+          ]
+      }  
+     ]
+   }
+   
